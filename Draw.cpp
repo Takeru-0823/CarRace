@@ -8,7 +8,7 @@ void drawText(VECTOR2 pos, int col, const char* txt, int val, int siz)
 	DrawFormatString(pos.x, pos.y, col, txt, val);
 }
 
-void drawCar(VECTOR2 pos, int type, const int* IMGCAR)
+void drawCar(const CAR& CAR, const int* IMGCAR)
 {
-	DrawGraph(pos.x - CAR_W[type] / 2, pos.y - CAR_H[type] / 2, IMGCAR[type], TRUE);
+	DrawGraph(CAR.pos.x - CAR_W[CAR.type] / 2, CAR.pos.y - CAR_H[CAR.type] / 2, IMGCAR[CAR.type], TRUE);
 }

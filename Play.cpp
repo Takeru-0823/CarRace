@@ -11,7 +11,7 @@ Scene play(CAR* player, COM_CAR* computer, FUEL* fuel, INFO* info, const int* IM
 	if (player->pos.x > 460) player->pos.x = 460;
 	if (player->pos.y < 40) player->pos.y = 40;
 	if (player->pos.y > 600) player->pos.y = 600;
-	drawCar(player->pos, player->type, IMGCAR);
+	drawCar(*player, IMGCAR);
 
 	for (int i = 0; i < COM_MAX; i++)
 	{
@@ -55,7 +55,7 @@ Scene play(CAR* player, COM_CAR* computer, FUEL* fuel, INFO* info, const int* IM
 			if (info->score > info->highScore) info->highScore = info->score;
 		}
 
-		drawCar(computer[i].car.pos, computer[i].car.type, IMGCAR);
+		drawCar(computer[i].car, IMGCAR);
 	}
 
 	fuel->pos.y += 4;

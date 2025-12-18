@@ -9,10 +9,10 @@ Scene over(INFO* info,CAR* player, COM_CAR* computer, const int* IMGCAR)
 		computer[i].car.pos.y = computer[i].car.pos.y - 1 - i;
 		if (computer[i].car.pos.y < -100) computer[i].car.pos.y = HEIGHT + 100;
 
-		drawCar(computer[i].car.pos, computer[i].car.type, IMGCAR);
+		drawCar(computer[i].car, IMGCAR);
 
 	}
-	drawCar(player->pos, player->type, IMGCAR);
+	drawCar(*player, IMGCAR);
 
 	drawText({ 180, 240 }, RED, "GAME OVER", 0, 80);
 	if (info->timer > 60 * 5) return TITLE;

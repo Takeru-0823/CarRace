@@ -16,7 +16,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetBackgroundColor(0, 0, 0);
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	int bgY = 0;
 	const int IMGBG = LoadGraph("image/bg.png");
 
 	const int IMGCAR[CAR_MAX] =
@@ -57,8 +56,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		ClearDrawScreen();
 
-		DrawGraph(0, bgY - HEIGHT, IMGBG, FALSE);
-		DrawGraph(0, bgY, IMGBG, FALSE);
+		DrawGraph(0, info.bgY - HEIGHT, IMGBG, FALSE);
+		DrawGraph(0, info.bgY, IMGBG, FALSE);
 
 		info.timer++;
 

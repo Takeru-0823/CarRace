@@ -77,12 +77,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
-		drawText(10, 10, SKYBLUE, "SCORE %d", info.score, 30);
-		drawText(WIDTH - 200, 10, YELLOW, "HI-SC %d", info.highScore, 30);
+		drawText({ 10, 10 }, SKYBLUE, "SCORE %d", info.score, 30);
+		drawText({ WIDTH - 200, 10 }, YELLOW, "HI-SC %d", info.highScore, 30);
 		int col = GREEN;
 		if (fuel.fuelAmount < 400) col = ORANGE;
 		if (fuel.fuelAmount < 200) col = RED;
-		drawText(10, HEIGHT - 40, col, "FUEL %d", fuel.fuelAmount, 30);
+		drawText({ 10, HEIGHT - 40 }, col, "FUEL %d", fuel.fuelAmount, 30);
 
 		ScreenFlip();
 		WaitTimer(16);

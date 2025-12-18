@@ -5,8 +5,8 @@
 
 Scene title(CAR* player, COM_CAR* computer, FUEL* fuel, INFO* info, const SOUND& SOUND)
 {
-	drawText(160, 160, WHITE, "Car Race", 0, 100);
-	if (info->timer % 60 < 30) drawText(210, 400, GREEN, "Click to start.", 0, 40);
+	drawText({ 160, 160 }, WHITE, "Car Race", 0, 100);
+	if (info->timer % 60 < 30) drawText({ 210, 400 }, GREEN, "Click to start.", 0, 40);
 	if (GetMouseInput() & MOUSE_INPUT_LEFT)
 	{
 		player->pos.x = WIDTH / 2;

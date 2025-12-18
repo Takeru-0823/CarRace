@@ -1,14 +1,14 @@
 #include "Color.h"
 #include "Variable.h"
 
-void drawText(int x, int y, int col, const char* txt, int val, int siz)
+void drawText(VECTOR2 pos, int col, const char* txt, int val, int siz)
 {
 	SetFontSize(siz);
-	DrawFormatString(x + 2, y + 2, BLACK, txt, val);
-	DrawFormatString(x, y, col, txt, val);
+	DrawFormatString(pos.x + 2, pos.y + 2, BLACK, txt, val);
+	DrawFormatString(pos.x, pos.y, col, txt, val);
 }
 
-void drawCar(int x, int y, int type, const int* IMGCAR)
+void drawCar(VECTOR2 pos, int type, const int* IMGCAR)
 {
-	DrawGraph(x - CAR_W[type] / 2, y - CAR_H[type] / 2, IMGCAR[type], TRUE);
+	DrawGraph(pos.x - CAR_W[type] / 2, pos.y - CAR_H[type] / 2, IMGCAR[type], TRUE);
 }

@@ -90,6 +90,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
 	}
 
+	DeleteGraph(IMGBG);
+	DeleteSoundMem(SOUND.bgm);
+	DeleteSoundMem(SOUND.jin);
+	DeleteSoundMem(SOUND.seFuel);
+	DeleteSoundMem(SOUND.seCrash);
+	for (int i = 0; i < CAR_MAX; i++)
+	{
+		DeleteGraph(IMGCAR[i]);
+	}
+
+
 	DxLib_End();
 	return 0;
 }
